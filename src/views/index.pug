@@ -1,0 +1,24 @@
+extends layouts/home
+include ../blocks/modules/main-slider/main-slider
+include ../blocks/modules/main-about/main-about
+include ../blocks/modules/main-services/main-services
+include ../blocks/modules/main-gallery/main-gallery
+include ../blocks/modules/main-review/main-review
+include ../blocks/modules/main-contacts/main-contacts
+
+block variables
+  include ../data/data.pug
+
+
+block content
+  +main-slider()
+  +main-about()
+  +main-services()
+  +main-gallery()
+  +main-review()
+  +main-contacts()
+
+
+block scripts
+  script(src="js/main.js?v=1.52")
+  script(src="js/vendor.js") 

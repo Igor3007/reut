@@ -1,0 +1,15 @@
+.container
+  .header
+    .header__logo: a(href='/'): +bgimage('../img/common/logo.svg')
+    .header__nav
+      nav
+        ul
+          each item in app.menu
+            li: a( href="item.link")= item.text
+    .header__msgr
+      ul
+        each item in app.msgr
+          li: a( href="item.link"): +icons(item.icon)
+    .header__signup
+      a(href='#'): button.btn Записаться
+

@@ -1,0 +1,40 @@
+footer {
+    background-color: #EEE9E9;
+}
+
+.footer {
+
+    height: rem(168);
+    padding: rem(20) 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    &__logo {
+
+        max-width: 179px;
+        width: 100%;
+        margin: 0 auto;
+
+        & a {
+            display: block;
+            width: 100%;
+        }
+
+        & .bgimage {
+            width: 100%;
+            padding-top: 33%;
+            @include bgimage-contain;
+            margin-left: rem(35);
+        }
+    }
+
+    &__copyright {
+        padding-top: rem(20);
+        text-align: center;
+        font-size: rem(15);
+        font-weight: 500;
+        color: #666;
+    }
+}
