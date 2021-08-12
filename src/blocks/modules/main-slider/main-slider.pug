@@ -1,5 +1,15 @@
 mixin main-slider()
   section.section-main-slider
     .main-slider
-      .main-slider__bg: +bgimage
+      .main-slider__bg: +bgimage('../img/common/slider-bg.jpg')
       .main-slider__content
+        .container
+          .main-slider__swiper
+            .swiper-container(data-swiper="main-slider")
+              .swiper-wrapper
+                each item in app.slider
+                  .swiper-slide
+                    .main-slider__title= item.title
+                    .main-slider__desc= item.desc
+                    .main-slider__btn: button.btn Подробнее
+              .swiper-dots(data-swiper-dots="main-slider")

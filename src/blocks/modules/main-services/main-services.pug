@@ -1,2 +1,40 @@
 mixin main-services()
-  div main-services
+  section.section-main-services
+    .container
+      .section-main-services__title Услуги 
+      .section-main-services__main
+        .main-services
+          .main-services__list
+            each item, index in app.services
+              .main-services__item
+                .services-item
+                  .services-item__image: div: +bgimage(item.image)
+                  .services-item__main
+                    .services-item__title= item.title
+
+                    if item.for_whom
+                      .services-item__subtitle Кому подойдет:
+                      .services-item__text!= item.for_whom
+
+                    if item.text
+                      .services-item__subtitle Что вы узнаете на курсе: 
+                      .services-item__text!= item.text
+
+                    if item.time
+                      .services-item__time
+                        +icons('#ic_clock')
+                        span= item.time.title
+                        div= item.time.text
+
+                    if item.cost
+                      .services-item__cost
+                        +icons('#ic_pub')
+                        span= item.cost.title
+                        div= item.cost.text
+
+
+
+
+                    .services-item__btn: a(href=app.social[0].link target="_blank"): button.btn.btn-line Записаться
+
+

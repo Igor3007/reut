@@ -4,7 +4,7 @@ html {
     font-weight: normal;
     font-size: 16px;
     line-height: 140%;
-    background: #f4f4f4;
+    background: #fff;
     color: #000;
     letter-spacing: normal;
 
@@ -106,3 +106,32 @@ section {
 }
 
 /* ================== */
+
+@mixin section-title {
+    font-weight: bold;
+    font-size: rem(36);
+    line-height: 130%;
+    color: #000000;
+}
+
+@mixin section-title-line {
+    &::after {
+        content: '';
+        width: rem(75);
+        height: 2px;
+        display: block;
+        background-color: $main;
+        margin: auto;
+        margin-top: 10px;
+    }
+}
+
+@mixin section-padding {
+    padding-top: rem(45);
+    padding-bottom: rem(45);
+
+    @media screen and (max-width: $w1280) {
+        padding-top: rem(25);
+        padding-bottom: rem(25);
+    }
+}

@@ -1,2 +1,23 @@
 mixin main-about()
-  div main-about
+  section.section-main-about
+    .container
+      .main-about
+        .main-about__left
+          .main-about__title Об авторе
+          .main-about__desc
+            p Наталья Реутова - руководитель студии красоты Art Avenue.
+            p Омбудсмен АПИК по Липецкой Области. <br> Эксперт в области финансов <br> Опыт предпринимательства 8 лет
+            p Автор курсов 
+              strong «Эффективный администратор салона красоты» 
+              | и 
+              strong «Финансовый порядок в салоне красоты»
+          .main-about__msgr
+            ul
+              each item in app.social
+                li: a( href=item.link): +icons(item.icon, 20)
+
+        .main-about__right
+          .main-about-autor
+            .main-about-autor__photo
+              +bgimage('../img/common/autor.jpg')
+            .main-about-autor__name Наталия Реутова

@@ -60,6 +60,18 @@
     }
 }
 
+@keyframes slide-left {
+    from {
+        transform: translateX(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 @-webkit-keyframes hoverWave {
     0% {
         -webkit-box-shadow: 0 8px 10px rgba(255, 0, 0, 0.541), 0 0 0 0 rgba(255, 0, 0, 0.2), 0 0 0 0 rgba(255, 0, 0, 0.2);

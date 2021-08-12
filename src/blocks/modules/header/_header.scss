@@ -72,6 +72,12 @@ header {
                     background-color: #eee;
                     border-radius: 50%;
 
+                    transition: box-shadow 0.5s ease;
+
+                    &:hover {
+                        box-shadow: 0 0 6px 0px $main;
+                    }
+
                     & svg {
                         width: rem(23);
                         min-width: rem(23);

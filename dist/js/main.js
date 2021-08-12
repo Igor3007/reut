@@ -155,28 +155,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/blocks/modules/header/header.js":
-/*!*********************************************!*\
-  !*** ./src/blocks/modules/header/header.js ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ "./src/blocks/modules/mobile-menu-button/mobile-menu-button.js":
-/*!*********************************************************************!*\
-  !*** ./src/blocks/modules/mobile-menu-button/mobile-menu-button.js ***!
-  \*********************************************************************/
-/*! no exports provided */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'C:\\OSPanel\\domains\\reut\\src\\blocks\\modules\\mobile-menu-button\\mobile-menu-button.js'");
-
-/***/ }),
-
 /***/ "./src/js/import/components.js":
 /*!*************************************!*\
   !*** ./src/js/import/components.js ***!
@@ -1947,44 +1925,10 @@ __webpack_require__.r(__webpack_exports__);
 /*!**********************************!*\
   !*** ./src/js/import/modules.js ***!
   \**********************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_header_header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! %modules%/header/header */ "./src/blocks/modules/header/header.js");
-/* harmony import */ var _modules_header_header__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_header_header__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _modules_mobile_menu_button_mobile_menu_button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! %modules%/mobile-menu-button/mobile-menu-button */ "./src/blocks/modules/mobile-menu-button/mobile-menu-button.js");
-
- // import "%modules%/video/video";
-// import "%modules%/menu/menu";
-// import "%modules%/popup-catalog/popup-catalog";
-// import "%modules%/footer/footer";
-
-/* home */
-// import "%modules%/banner-home/banner-home";
-// import "%modules%/slider-home/slider-home";
-// import "%modules%/product-slider-home/product-slider-home";
-// import "%modules%/catalog/minicard/minicard";
-// import "%modules%/catalog/similar-product/similar-product";
-// import "%modules%/top-brands/top-brands";
-
-/* catalog */
-// import "%modules%/catalog/catalog-filter/catalog-filter";
-
-/* card */
-// import "%modules%/card-moreinfo/card-moreinfo";
-// import "%modules%/cart-similar/cart-similar";
-// import "%modules%/mapsfilter/mapsfilter";
-// import "%modules%/card-callback/card-callback";
-
-/* popup */
-// import "%modules%/right-popup/right-popup";
-// import "%modules%/form-login/form-login";
-// import "%modules%/basket/basketcard/basketcard";
-
-/* basket */
-// import "%modules%/basket/basket-aside/basket-aside";
+// import "%modules%/header/header";
 
 /***/ }),
 
@@ -1998,6 +1942,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _import_modules__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./import/modules */ "./src/js/import/modules.js");
+/* harmony import */ var _import_modules__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_import_modules__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _import_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./import/components */ "./src/js/import/components.js");
 /* harmony import */ var _import_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_import_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var jquery_inputmask_dist_jquery_inputmask_bundle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery.inputmask/dist/jquery.inputmask.bundle */ "./node_modules/jquery.inputmask/dist/jquery.inputmask.bundle.js");
@@ -2018,6 +1963,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+swiper__WEBPACK_IMPORTED_MODULE_5__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_5__["Pagination"], swiper__WEBPACK_IMPORTED_MODULE_5__["Navigation"], swiper__WEBPACK_IMPORTED_MODULE_5__["Thumbs"]]);
 
 
 
@@ -2031,6 +1977,46 @@ jquery__WEBPACK_IMPORTED_MODULE_6___default()(document).ready(function () {
     created: function created() {
       // `this` указывает на экземпляр vm
       console.log('hello vue js');
+    }
+  }); //main slider====================================
+
+  var mainSlider = new swiper__WEBPACK_IMPORTED_MODULE_5__["default"]('[data-swiper="main-slider"]', {
+    pagination: {
+      el: '[data-swiper-dots="main-slider"]',
+      type: 'bullets',
+      clickable: true
+    }
+  }); //gallery ======================================
+
+  function updateFraction(elem) {
+    console.log(elem);
+    document.querySelector('.gallery-view__caption-desc span.active').classList.remove('active');
+    document.querySelectorAll('.gallery-view__caption-desc span')[elem.activeIndex].classList.add('active');
+  }
+
+  var galleryThumb = new swiper__WEBPACK_IMPORTED_MODULE_5__["default"]('[data-swiper="gallery-thumb"]', {
+    spaceBetween: 0,
+    slidesPerView: 6.5,
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true
+  });
+  var galleryFull = new swiper__WEBPACK_IMPORTED_MODULE_5__["default"]('[data-swiper="gallery"]', {
+    spaceBetween: 0,
+    navigation: {
+      nextEl: '[data-swiper-next="gallery"]',
+      prevEl: '[data-swiper-prev="gallery"]'
+    },
+    thumbs: {
+      swiper: galleryThumb
+    },
+    on: {
+      init: function init() {
+        setTimeout(updateFraction, 0, this);
+      },
+      slideChange: function slideChange(event) {
+        updateFraction(this);
+      }
     }
   });
 });

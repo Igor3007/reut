@@ -1,0 +1,202 @@
+.section-main-gallery {
+    @include section-padding;
+    background-color: #fff;
+
+    &__title {
+        @include section-title;
+        @include section-title-line;
+        text-align: center;
+    }
+
+    &__subtitle {
+        text-align: center;
+        padding-top: rem(12);
+    }
+}
+
+.gallery-view {
+
+    &__slider {
+        padding-top: rem(40);
+        position: relative;
+
+        &:hover {
+
+            & .swiper-nav__prev,
+            & .swiper-nav__next {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+    }
+
+    &__swiper {
+
+
+        & .swiper-slide {
+            & .bgimage {
+                padding-top: 57%;
+                @include bgimage-cover;
+
+            }
+        }
+    }
+}
+
+.gallery-view {
+
+    max-width: rem(1240);
+    margin: 0 auto;
+
+    &__caption {
+
+        padding-top: rem(30);
+
+        &-autor {
+            display: flex;
+            align-items: center;
+        }
+
+        &-name {
+            font-weight: bold;
+            font-size: rem(18);
+            line-height: rem(22);
+            text-align: center;
+            color: #000000;
+            margin-left: rem(20);
+        }
+
+        &-desc {
+            padding-top: rem(23);
+            font-size: rem(14);
+
+            & span {
+                display: none;
+
+                &.active {
+                    display: block;
+                    animation: slide-up 0.4s ease 1 forwards;
+                }
+            }
+        }
+
+        &-photo {
+
+            max-width: 60px;
+            width: 100%;
+            border: rem(3) solid #fff;
+            box-shadow: 0 0 0 2px $main;
+            border-radius: 50%;
+            transition: 0.4s ease;
+
+            & .bgimage {
+                @include box-square;
+                @include bgimage-cover;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+.main-gallery {
+    &__thumb {
+        background-color: #EEE9E9;
+        padding: rem(40);
+        margin-top: rem(25);
+
+        &:hover {
+
+            & .swiper-nav__prev,
+            & .swiper-nav__next {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        & .container {
+            max-width: rem(1240);
+            margin: 0 auto;
+            box-sizing: content-box;
+            position: relative;
+        }
+
+        & .swiper-slide {
+
+            max-width: 200px;
+
+            &.swiper-slide-thumb-active {
+                & .bgimage {
+                    &::before {
+                        opacity: 0;
+                    }
+                }
+            }
+
+            & .bgimage {
+                padding-top: 65%;
+                @include bgimage-cover;
+                cursor: pointer;
+
+                &::before {
+                    @include layer(1);
+                    background-color: rgba($color: #000000, $alpha: 0.5);
+                    content: '';
+                    transition: 0.4s ease;
+                }
+
+                &:hover {
+                    &::before {
+                        opacity: 0;
+                    }
+                }
+            }
+
+
+        }
+
+        & .swiper-nav {
+            position: absolute;
+            top: calc(50% - 15px);
+            left: -40px;
+            right: -40px;
+        }
+    }
+
+    &__more {
+        padding-top: rem(30);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+
+        & .btn {
+            height: rem(50);
+        }
+    }
+}
+
+.swiper-nav {
+
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: calc(50% + 15px);
+    z-index: 10;
+    left: rem(-70);
+    right: rem(-70);
+    height: 0;
+
+    &__prev {
+        cursor: pointer;
+        transform: translateX(20px);
+        opacity: 0;
+        transition: 0.3s ease;
+    }
+
+    &__next {
+        cursor: pointer;
+        transform: translateX(-20px);
+        opacity: 0;
+        transition: 0.3s ease;
+    }
+}

@@ -1,2 +1,22 @@
+mixin review-item(data)
+  .review-item
+    .review-item__head
+      .review-item__head-photo: +bgimage(data.image)
+      .review-item__head-meta
+        .review-item__head-name: a(href=data.link)= data.autor 
+        .review-item__head-data 
+          span= data.date
+          span через 
+          a(href=data.link): +icons('#ic_ig-gray')
+    .review-item__main= data.text
+
 mixin main-review()
-  div main-review
+  section.section-main-review
+    .container
+      .section-main-review__title Отзывы наших клиентов 
+      .section-main-review__subtitle Отзывы людей которые посетили наши мероприятия 
+      .section-main-review__list
+        .main-review
+          .main-review__list
+            each item in app.review
+              .main-review__item: +review-item(item)

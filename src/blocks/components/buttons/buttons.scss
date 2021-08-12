@@ -13,7 +13,7 @@
     text-transform: uppercase;
     border-radius: 60px;
     min-width: rem(130);
-    height: rem(40);
+    height: rem(41);
 
     font-style: normal;
     font-weight: bold;
@@ -58,72 +58,26 @@
         font-weight: 600;
     }
 
-    &.btn-dark {
-        color: #fff;
-        background-color: $dark;
 
-        &:hover {
-            opacity: 0.9;
-        }
-    }
-
-    &.btn-black {
-        color: #fff;
-        background-color: #000;
-
-        &:hover {
-            opacity: 0.9;
-        }
-    }
 
     &.btn-line {
-        border: 1px solid #bcbcbc;
-        background: none;
-        text-transform: uppercase;
-        font-weight: bold;
-        color: $gray;
+        border: 2px solid $main;
+        box-sizing: border-box;
+        border-radius: 50px;
+        height: rem(48);
+        background-color: transparent;
+        color: #000;
 
         &:hover {
-            background-color: $grayBlue;
+            background-color: $main;
             color: #fff !important;
-            border-color: $grayBlue
+            border-color: $main
         }
     }
 
-    &.btn-red-line {
-        border: 1px solid $red;
-        background: none;
-        text-transform: uppercase;
-        font-weight: bold;
-        color: $red;
 
-        & svg {
-            fill: $red;
 
-            position: relative;
-            left: rem(-12);
-        }
 
-        &:hover {
-            background-color: $red;
-            color: #fff !important;
-            border-color: $red;
-
-            & svg {
-                fill: #fff;
-            }
-        }
-    }
-
-    &.btn-line-radius {
-        background: transparent;
-        border: 1px solid $mgray;
-        border-radius: rem(40);
-
-        &:hover {
-            border-color: $red;
-        }
-    }
 
     &.btn-full {
         width: 100%;
