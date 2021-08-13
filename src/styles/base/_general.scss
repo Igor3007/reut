@@ -112,6 +112,12 @@ section {
     font-size: rem(36);
     line-height: 130%;
     color: #000000;
+
+    @media screen and (max-width: $w580) {
+        font-size: rem(34);
+    }
+
+    @media screen and (max-width: $w360) {}
 }
 
 @mixin section-title-line {
@@ -127,11 +133,11 @@ section {
 }
 
 @mixin section-padding {
-    padding-top: rem(45);
-    padding-bottom: rem(45);
+    padding-top: rem(80);
+    padding-bottom: rem(80);
 
     @media screen and (max-width: $w1280) {
-        padding-top: rem(25);
-        padding-bottom: rem(25);
+        padding-top: rem(45);
+        padding-bottom: rem(45);
     }
 }

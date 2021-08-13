@@ -1,5 +1,5 @@
 mixin main-slider()
-  section.section-main-slider
+  section.section-main-slider(id="slider")
     .main-slider
       .main-slider__bg: +bgimage('../img/common/slider-bg.jpg')
       .main-slider__content
@@ -7,9 +7,9 @@ mixin main-slider()
           .main-slider__swiper
             .swiper-container(data-swiper="main-slider")
               .swiper-wrapper
-                each item in app.slider
+                each item, index in app.slider
                   .swiper-slide
                     .main-slider__title= item.title
                     .main-slider__desc= item.desc
-                    .main-slider__btn: button.btn Подробнее
+                    .main-slider__btn: a(href='#kurs_'+index): button.btn Подробнее
               .swiper-dots(data-swiper-dots="main-slider")

@@ -17,12 +17,26 @@
             padding-top: 29%;
             @include bgimage-contain;
             background-position-x: right;
+            min-height: rem(415);
+
+            @media screen and (max-width: $w760) {
+                background-size: cover;
+            }
+
+            @media screen and (max-width: $w480) {
+                padding-top: auto;
+                height: 70vh;
+            }
         }
     }
 
     &__content {
         @include layer(2);
         background: linear-gradient(89.98deg, #FFFFFF 50.1%, rgba(255, 255, 255, 0.81) 60.03%, rgba(255, 255, 255, 0) 93.4%);
+
+        @media screen and (max-width: $w760) {
+            background: rgba(255, 255, 255, 0.7);
+        }
 
         & .container {
             height: 100%;
@@ -37,8 +51,14 @@
         color: #000000;
         font-weight: 600;
         max-width: rem(860);
-
         padding-bottom: rem(25);
+
+        @media screen and (max-width: $w1280) {
+            font-size: rem(36);
+            max-width: rem(700);
+            line-height: 130%;
+
+        }
     }
 
     &__desc {
@@ -54,17 +74,22 @@
 
     &__btn {
         padding-bottom: rem(25);
+
+        & .btn {
+            height: 50px;
+            min-width: 250px;
+        }
     }
 
     &__swiper {
         width: 100%;
-        max-width: 830px;
+        max-width: rem(830);
         margin-right: auto;
 
         & .swiper-pagination-bullet {
-            width: 45px;
+            width: rem(45);
             border-radius: 0;
-            height: 4px;
+            height: rem(4);
         }
 
         & .swiper-pagination-bullet-active {

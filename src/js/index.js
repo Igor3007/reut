@@ -34,6 +34,40 @@ $(document).ready(function () {
 
   //main slider====================================
 
+  $(document).ready(function(){
+    $('.burger').on('click', function(){
+        $(this).toggleClass('open')
+        $('.header__nav nav').toggleClass('open')
+        $('header').toggleClass('open')
+
+        // var innerHeaderHeight = $('header').innerHeight()
+
+        // $('.mobile-menu').toggleClass('open').css({
+        //     'top': innerHeaderHeight+'px'
+        // })
+
+        $('html').toggleClass('hidden')
+    });
+
+
+    //закрыть при клике вне
+
+    $(document).on('click', function (e) {
+        var div = $(".burger, .header__nav nav");  //класс элемента вне которого клик
+        if (!div.is(e.target) && div.has(e.target).length === 0) {
+            //закрыть popup
+            if($('.burger').hasClass('open')){
+                $('.burger').trigger('click')
+            }
+            
+        }
+    });
+
+   
+})
+
+  //main slider====================================
+
   var mainSlider = new Swiper('[data-swiper="main-slider"]', {
     pagination: {
       el: '[data-swiper-dots="main-slider"]',
@@ -50,6 +84,9 @@ $(document).ready(function () {
     document.querySelector('.gallery-view__caption-desc span.active').classList.remove('active')
     document.querySelectorAll('.gallery-view__caption-desc span')[elem.activeIndex].classList.add('active')
 
+    // var offset = $('.gallery-view__swiper').offset().top
+    // $(window).scrollTop(offset)
+
   }
 
   var galleryThumb = new Swiper('[data-swiper="gallery-thumb"]', {
@@ -58,6 +95,20 @@ $(document).ready(function () {
     freeMode: true,
     watchSlidesVisibility: true,
     watchSlidesProgress: true,
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 2.5,
+      },
+      // when window width is >= 480px
+      480: {
+        slidesPerView: 3.2,
+      },
+      // when window width is >= 640px
+      940: {
+        slidesPerView: 6.5,
+      }
+    }
   });
 
   var galleryFull = new Swiper('[data-swiper="gallery"]', {
@@ -79,5 +130,25 @@ $(document).ready(function () {
        
     },
   });
+
+
+  // плавный скролл ======================================
+    
+var $page = $('html, body');
+$('.header__nav li a[href*="#"]').on('click', function() {
+
+    $page.animate({
+        scrollTop: ($($.attr(this, 'href')).offset().top)  
+    }, 400);
+    $('.burger').trigger('click')
+    return false;
+});
+$('a[href*="#"]').on('click', function() {
+
+    $page.animate({
+        scrollTop: ($($.attr(this, 'href')).offset().top)  
+    }, 400);
+    return false;
+});
 
 });

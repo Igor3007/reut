@@ -1,5 +1,5 @@
 mixin main-gallery()
-  section.section-main-gallery
+  section.section-main-gallery(id="gallery")
     .container
       .section-main-gallery__title Фотогаллерея 
       .section-main-gallery__subtitle Фотографии с наших мероприятий  
@@ -34,5 +34,5 @@ mixin main-gallery()
               .swiper-nav__prev(data-swiper-prev="gallery"): +icons('#ic_arrow-left', 37)
               .swiper-nav__next(data-swiper-next="gallery"): +icons('#ic_arrow-right', 37)
         .main-gallery__more
-          a(href='#'): button.btn Больше фото в Instagram
+          a(href=app.social[0].link): button.btn Больше фото в Instagram
 

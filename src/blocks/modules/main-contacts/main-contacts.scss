@@ -1,0 +1,110 @@
+.section-main-contacts {
+    @include section-padding;
+    background-color: #fff;
+
+    &__title {
+        @include section-title;
+        @include section-title-line;
+        text-align: center;
+    }
+
+    &__subtitle {
+        text-align: center;
+        padding-top: rem(12);
+    }
+}
+
+.main-contacts {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: rem(70);
+    padding-bottom: rem(40);
+
+    @media screen and (max-width: $w760) {
+        flex-direction: column;
+    }
+
+    &__address {
+        display: flex;
+        align-items: center;
+
+        @media screen and (max-width: $w760) {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: rem(30);
+        }
+
+        &-icon {
+            margin-right: rem(20);
+        }
+
+        &-desc {
+            margin-right: rem(50);
+        }
+
+        &-title {
+            font-weight: bold;
+            font-size: rem(24);
+            line-height: rem(29);
+            color: #000000;
+            padding-bottom: rem(5);
+        }
+
+    }
+
+    &__phone {
+
+        display: flex;
+        align-items: center;
+
+        &-msgr {
+            & ul {
+                display: flex;
+                align-items: center;
+
+
+                & li {
+                    padding: 0 rem(5);
+
+                    & a {
+                        width: rem(40);
+                        height: rem(40);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: #eee;
+                        border-radius: 50%;
+
+                        transition: box-shadow 0.5s ease;
+
+                        &:hover {
+                            box-shadow: 0 0 6px 0px $main;
+                        }
+
+                        & svg {
+                            width: rem(23);
+                            min-width: rem(23);
+                            height: rem(23);
+                        }
+                    }
+                }
+            }
+        }
+
+        &-desc {
+            margin-right: rem(30);
+        }
+
+        &-title {
+            font-weight: bold;
+            font-size: rem(24);
+            line-height: rem(29);
+            color: #000000;
+            padding-bottom: rem(5);
+        }
+    }
+
+
+}

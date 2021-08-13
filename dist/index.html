@@ -24,7 +24,7 @@
     <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
     <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
-    <link rel="stylesheet" href="styles/main.css?v=1.52">
+    <link rel="stylesheet" href="styles/main.min.css?v=1.52">
   </head>
   <body>
     <div id="app">
@@ -35,37 +35,38 @@
             <div class="header__nav">
               <nav>
                 <ul>
-                  <li><a href="item.link">Об авторе</a></li>
-                  <li><a href="item.link">Услуги</a></li>
-                  <li><a href="item.link">Фотогалерея</a></li>
-                  <li><a href="item.link">Отзывы</a></li>
-                  <li><a href="item.link">Контакты</a></li>
+                  <li><a href="#about">Об авторе</a></li>
+                  <li><a href="#services">Услуги</a></li>
+                  <li><a href="#gallery">Фотогалерея</a></li>
+                  <li><a href="#review">Отзывы</a></li>
+                  <li><a href="#contacts">Контакты</a></li>
                 </ul>
               </nav>
             </div>
             <div class="header__msgr">
               <ul>
-                <li><a href="item.link">
+                <li><a href="viber://chat/?number=%2B79191670446">
                     <svg width="25" height="25">
                       <use xlink:href="/img/sprites/sprite.svg#ic_vb"></use>
                     </svg></a></li>
-                <li><a href="item.link">
+                <li><a href="tg://resolve?domain=79191670446">
                     <svg width="25" height="25">
                       <use xlink:href="/img/sprites/sprite.svg#ic_tg"></use>
                     </svg></a></li>
-                <li><a href="item.link">
+                <li><a href="https://api.whatsapp.com/send?phone=79191670446">
                     <svg width="25" height="25">
                       <use xlink:href="/img/sprites/sprite.svg#ic_wa"></use>
                     </svg></a></li>
               </ul>
             </div>
-            <div class="header__signup"><a href="#">
+            <div class="header__signup"><a href="https://www.instagram.com/natalia_reutova_/">
                 <button class="btn">Записаться</button></a></div>
+            <div class="header__burger"><span class="burger"><i></i><i></i><i></i></span></div>
           </div>
         </div>
       </header>
       <main>
-        <section class="section-main-slider">
+        <section class="section-main-slider" id="slider">
           <div class="main-slider">
             <div class="main-slider__bg"><span class="bgimage" style="background-image: url(../img/common/slider-bg.jpg)"></span>
             </div>
@@ -77,16 +78,14 @@
                       <div class="swiper-slide">
                         <div class="main-slider__title">Курс «Эффективный администратор салона красоты»</div>
                         <div class="main-slider__desc">роль администратора, общие обязанности, навыки администрирования</div>
-                        <div class="main-slider__btn">
-                          <button class="btn">Подробнее</button>
-                        </div>
+                        <div class="main-slider__btn"><a href="#kurs_0">
+                            <button class="btn">Подробнее</button></a></div>
                       </div>
                       <div class="swiper-slide">
                         <div class="main-slider__title">Курс «Финансовый порядок в салоне красоты»»</div>
                         <div class="main-slider__desc">Курс для руководителей и управляющих салона.</div>
-                        <div class="main-slider__btn">
-                          <button class="btn">Подробнее</button>
-                        </div>
+                        <div class="main-slider__btn"><a href="#kurs_1">
+                            <button class="btn">Подробнее</button></a></div>
                       </div>
                     </div>
                     <div class="swiper-dots" data-swiper-dots="main-slider"></div>
@@ -96,7 +95,7 @@
             </div>
           </div>
         </section>
-        <section class="section-main-about">
+        <section class="section-main-about" id="about">
           <div class="container">
             <div class="main-about">
               <div class="main-about__left">
@@ -108,11 +107,11 @@
                 </div>
                 <div class="main-about__msgr">
                   <ul>
-                    <li><a href="/ig.html">
+                    <li><a href="https://www.instagram.com/natalia_reutova_/">
                         <svg width="20" height="20">
                           <use xlink:href="/img/sprites/sprite.svg#ic_ig"></use>
                         </svg></a></li>
-                    <li><a href="/vk.html">
+                    <li><a href="https://vk.com/natalia.demko">
                         <svg width="20" height="20">
                           <use xlink:href="/img/sprites/sprite.svg#ic_vk"></use>
                         </svg></a></li>
@@ -129,13 +128,13 @@
             </div>
           </div>
         </section>
-        <section class="section-main-services">
+        <section class="section-main-services" id="services">
           <div class="container">
             <div class="section-main-services__title">Услуги </div>
             <div class="section-main-services__main">
               <div class="main-services">
                 <div class="main-services__list">
-                  <div class="main-services__item">
+                  <div class="main-services__item" id="kurs_0">
                     <div class="services-item">
                       <div class="services-item__image">
                         <div><span class="bgimage" style="background-image: url(../img/common/s1.jpg)"></span>
@@ -157,12 +156,12 @@
                           </svg><span>Стоимость:</span>
                           <div>10 000 р за администратора ( минимум 2 из салона )</div>
                         </div>
-                        <div class="services-item__btn"><a href="/ig.html" target="_blank">
+                        <div class="services-item__btn"><a href="https://www.instagram.com/natalia_reutova_/" target="_blank">
                             <button class="btn btn-line">Записаться</button></a></div>
                       </div>
                     </div>
                   </div>
-                  <div class="main-services__item">
+                  <div class="main-services__item" id="kurs_1">
                     <div class="services-item">
                       <div class="services-item__image">
                         <div><span class="bgimage" style="background-image: url(../img/common/s2.jpg)"></span>
@@ -186,12 +185,12 @@
                           </svg><span>Стоимость:</span>
                           <div>20 000 р </div>
                         </div>
-                        <div class="services-item__btn"><a href="/ig.html" target="_blank">
+                        <div class="services-item__btn"><a href="https://www.instagram.com/natalia_reutova_/" target="_blank">
                             <button class="btn btn-line">Записаться</button></a></div>
                       </div>
                     </div>
                   </div>
-                  <div class="main-services__item">
+                  <div class="main-services__item" id="kurs_2">
                     <div class="services-item">
                       <div class="services-item__image">
                         <div><span class="bgimage" style="background-image: url(../img/common/s3.jpg)"></span>
@@ -213,12 +212,12 @@
                           </svg><span>Стоимость:</span>
                           <div>20 000 р</div>
                         </div>
-                        <div class="services-item__btn"><a href="/ig.html" target="_blank">
+                        <div class="services-item__btn"><a href="https://www.instagram.com/natalia_reutova_/" target="_blank">
                             <button class="btn btn-line">Записаться</button></a></div>
                       </div>
                     </div>
                   </div>
-                  <div class="main-services__item">
+                  <div class="main-services__item" id="kurs_3">
                     <div class="services-item">
                       <div class="services-item__image">
                         <div><span class="bgimage" style="background-image: url(../img/common/s4.jpg)"></span>
@@ -240,7 +239,7 @@
                           </svg><span>Стоимость:</span>
                           <div>5000 р </div>
                         </div>
-                        <div class="services-item__btn"><a href="/ig.html" target="_blank">
+                        <div class="services-item__btn"><a href="https://www.instagram.com/natalia_reutova_/" target="_blank">
                             <button class="btn btn-line">Записаться</button></a></div>
                       </div>
                     </div>
@@ -250,7 +249,7 @@
             </div>
           </div>
         </section>
-        <section class="section-main-gallery">
+        <section class="section-main-gallery" id="gallery">
           <div class="container">
             <div class="section-main-gallery__title">Фотогаллерея </div>
             <div class="section-main-gallery__subtitle">Фотографии с наших мероприятий  </div>
@@ -376,12 +375,12 @@
                   </div>
                 </div>
               </div>
-              <div class="main-gallery__more"><a href="#">
+              <div class="main-gallery__more"><a href="https://www.instagram.com/natalia_reutova_/">
                   <button class="btn">Больше фото в Instagram</button></a></div>
             </div>
           </div>
         </section>
-        <section class="section-main-review">
+        <section class="section-main-review" id="review">
           <div class="container">
             <div class="section-main-review__title">Отзывы наших клиентов </div>
             <div class="section-main-review__subtitle">Отзывы людей которые посетили наши мероприятия </div>
@@ -417,7 +416,7 @@
                               </svg></a></div>
                         </div>
                       </div>
-                      <div class="review-item__main">Наталька, какая ты умничка 😍 &lt;br&gt; Поздравляю тебя и твою команду с этой наградой  и твою команду &lt;br&gt; Успехов вам и процветания ❤️</div>
+                      <div class="review-item__main">Наталька, какая ты умничка 😍 <br> Поздравляю тебя и твою команду с этой наградой  и твою команду <br> Успехов вам и процветания ❤️</div>
                     </div>
                   </div>
                   <div class="main-review__item">
@@ -427,7 +426,7 @@
                         </div>
                         <div class="review-item__head-meta">
                           <div class="review-item__head-name"><a href="https://www.instagram.com/m.kati_makeheir/">m.kati_makeheir</a></div>
-                          <div class="review-item__head-data"> <span>16 июня 2021 в 16:30</span><span>через </span><a href="https://www.instagram.com/m.kati_makeheir/">
+                          <div class="review-item__head-data"> <span>23 июня 2021 в 16:30</span><span>через </span><a href="https://www.instagram.com/m.kati_makeheir/">
                               <svg width="25" height="25">
                                 <use xlink:href="/img/sprites/sprite.svg#ic_ig-gray"></use>
                               </svg></a></div>
@@ -443,7 +442,7 @@
                         </div>
                         <div class="review-item__head-meta">
                           <div class="review-item__head-name"><a href="https://www.instagram.com/atelierboretskaya/">atelierboretskaya</a></div>
-                          <div class="review-item__head-data"> <span>16 июня 2021 в 16:30</span><span>через </span><a href="https://www.instagram.com/atelierboretskaya/">
+                          <div class="review-item__head-data"> <span>25 марта 2021 в 16:30</span><span>через </span><a href="https://www.instagram.com/atelierboretskaya/">
                               <svg width="25" height="25">
                                 <use xlink:href="/img/sprites/sprite.svg#ic_ig-gray"></use>
                               </svg></a></div>
@@ -455,11 +454,11 @@
                   <div class="main-review__item">
                     <div class="review-item">
                       <div class="review-item__head">
-                        <div class="review-item__head-photo"><span class="bgimage" style="background-image: url(../img/common/4.jpg)"></span>
+                        <div class="review-item__head-photo"><span class="bgimage" style="background-image: url(../img/common/5.jpg)"></span>
                         </div>
                         <div class="review-item__head-meta">
                           <div class="review-item__head-name"><a href="https://www.instagram.com/victoria_kisss/">victoria_kisss</a></div>
-                          <div class="review-item__head-data"> <span>16 июня 2021 в 16:30</span><span>через </span><a href="https://www.instagram.com/victoria_kisss/">
+                          <div class="review-item__head-data"> <span>3 января 2021 в 16:30</span><span>через </span><a href="https://www.instagram.com/victoria_kisss/">
                               <svg width="25" height="25">
                                 <use xlink:href="/img/sprites/sprite.svg#ic_ig-gray"></use>
                               </svg></a></div>
@@ -471,27 +470,27 @@
                   <div class="main-review__item">
                     <div class="review-item">
                       <div class="review-item__head">
-                        <div class="review-item__head-photo"><span class="bgimage" style="background-image: url(../img/common/2.jpg)"></span>
+                        <div class="review-item__head-photo"><span class="bgimage" style="background-image: url(../img/common/6.jpg)"></span>
                         </div>
                         <div class="review-item__head-meta">
                           <div class="review-item__head-name"><a href="https://www.instagram.com/salnikovaaanna/">salnikovaaanna</a></div>
-                          <div class="review-item__head-data"> <span>16 июня 2021 в 16:30</span><span>через </span><a href="https://www.instagram.com/salnikovaaanna/">
+                          <div class="review-item__head-data"> <span>14 июня 2021 в 16:30</span><span>через </span><a href="https://www.instagram.com/salnikovaaanna/">
                               <svg width="25" height="25">
                                 <use xlink:href="/img/sprites/sprite.svg#ic_ig-gray"></use>
                               </svg></a></div>
                         </div>
                       </div>
-                      <div class="review-item__main">Наталия солидарна с вашими словами- &quot;Знание- это сила!&quot; важно развивать ни только себя , но и общество вокруг, и начинать нужно с себя! Вы молодец, что пытаетесь в городе развивать индустрию красоты и выводить ее на новый достойный уровень! Постараюсь по возможности присоединиться к вашему мероприятию.💐</div>
+                      <div class="review-item__main">Наталия солидарна с вашими словами- "Знание- это сила!" важно развивать ни только себя , но и общество вокруг, и начинать нужно с себя! Вы молодец, что пытаетесь в городе развивать индустрию красоты и выводить ее на новый достойный уровень! Постараюсь по возможности присоединиться к вашему мероприятию.💐</div>
                     </div>
                   </div>
                   <div class="main-review__item">
                     <div class="review-item">
                       <div class="review-item__head">
-                        <div class="review-item__head-photo"><span class="bgimage" style="background-image: url(../img/common/1.jpg)"></span>
+                        <div class="review-item__head-photo"><span class="bgimage" style="background-image: url(../img/common/7.jpg)"></span>
                         </div>
                         <div class="review-item__head-meta">
                           <div class="review-item__head-name"><a href="https://www.instagram.com/alina__nechaeva/">alina__nechaeva</a></div>
-                          <div class="review-item__head-data"> <span>16 июня 2021 в 16:30</span><span>через </span><a href="https://www.instagram.com/alina__nechaeva/">
+                          <div class="review-item__head-data"> <span>12 мая 2021 в 16:30</span><span>через </span><a href="https://www.instagram.com/alina__nechaeva/">
                               <svg width="25" height="25">
                                 <use xlink:href="/img/sprites/sprite.svg#ic_ig-gray"></use>
                               </svg></a></div>
@@ -505,7 +504,50 @@
             </div>
           </div>
         </section>
-        <div>main-contacts</div>
+        <section class="section-main-contacts" id="contacts">
+          <div class="container">
+            <div class="section-main-contacts__title">Контакты </div>
+            <div class="section-main-contacts__main">
+              <div class="main-contacts">
+                <div class="main-contacts__address">
+                  <div class="main-contacts__address-icon">
+                    <svg width="37" height="52" viewbox="0 0 37 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18.6663 49.5683C18.6664 49.5681 18.6674 49.5673 18.6691 49.5659C18.6671 49.5677 18.6662 49.5684 18.6663 49.5683ZM19.107 49.0923C18.3053 48.2033 14.4398 43.8746 10.6485 38.3449C8.60552 35.3651 6.59829 32.0569 5.10492 28.767C3.60569 25.4642 2.65845 22.2532 2.65845 19.448C2.65845 10.3066 10.1331 2.85901 19.3292 2.85901C28.5253 2.85901 36 10.3066 36 19.448C36 22.2481 35.0284 25.4559 33.4884 28.7586C31.9546 32.0478 29.893 35.3556 27.7948 38.3354C23.8961 43.8723 19.9247 48.2023 19.107 49.0923Z" fill="white" stroke="#FF5454" stroke-width="2"></path>
+                      <path d="M19.5882 30.3333C22.4743 30.3333 25.2423 29.192 27.2831 27.1603C29.324 25.1287 30.4705 22.3732 30.4705 19.5C30.4705 16.6268 29.324 13.8713 27.2831 11.8397C25.2423 9.80802 22.4743 8.66666 19.5882 8.66666C16.702 8.66666 13.934 9.80802 11.8932 11.8397C9.85234 13.8713 8.70581 16.6268 8.70581 19.5C8.70581 22.3732 9.85234 25.1287 11.8932 27.1603C13.934 29.192 16.702 30.3333 19.5882 30.3333Z" fill="#FF5454"></path>
+                      <path d="M19.5883 23.8333C21.9924 23.8333 23.9412 21.8932 23.9412 19.5C23.9412 17.1068 21.9924 15.1667 19.5883 15.1667C17.1842 15.1667 15.2354 17.1068 15.2354 19.5C15.2354 21.8932 17.1842 23.8333 19.5883 23.8333Z" fill="white"></path>
+                    </svg>
+                  </div>
+                  <div class="main-contacts__address-desc">
+                    <div class="main-contacts__address-title">Адрес:</div>
+                    <div class="main-contacts__address-text">г.Липецк, Проспект победы, 104</div>
+                  </div>
+                </div>
+                <div class="main-contacts__phone">
+                  <div class="main-contacts__phone-desc">
+                    <div class="main-contacts__phone-title">Телефон:</div>
+                    <div class="main-contacts__phone-text">8-919-167-04-46</div>
+                  </div>
+                  <div class="main-contacts__phone-msgr">
+                    <ul>
+                      <li><a href="viber://chat/?number=%2B79191670446">
+                          <svg width="25" height="25">
+                            <use xlink:href="/img/sprites/sprite.svg#ic_vb"></use>
+                          </svg></a></li>
+                      <li><a href="tg://resolve?domain=79191670446">
+                          <svg width="25" height="25">
+                            <use xlink:href="/img/sprites/sprite.svg#ic_tg"></use>
+                          </svg></a></li>
+                      <li><a href="https://api.whatsapp.com/send?phone=79191670446">
+                          <svg width="25" height="25">
+                            <use xlink:href="/img/sprites/sprite.svg#ic_wa"></use>
+                          </svg></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <footer>
         <div class="container">
@@ -518,7 +560,7 @@
         </div>
       </footer>
     </div>
-    <script src="js/main.js?v=1.52"></script>
-    <script src="js/vendor.js"> </script>
+    <script src="js/main.min.js?v=1.52"></script>
+    <script src="js/vendor.min.js"> </script>
   </body>
 </html>

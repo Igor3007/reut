@@ -18,8 +18,12 @@ header {
 
     &__logo {
 
-        max-width: 179px;
+        max-width: rem(179);
         width: 100%;
+
+        @media screen and (max-width: $w1024) {
+            max-width: rem(150);
+        }
 
         & a {
             display: block;
@@ -30,12 +34,51 @@ header {
             width: 100%;
             padding-top: 33%;
             @include bgimage-contain;
+
+            @media screen and (max-width: $w480) {
+                padding-top: 40%;
+            }
         }
     }
 
     &__nav {
 
         flex-grow: 1;
+
+        & nav {
+            @media screen and (max-width: $w1024) {
+                display: none;
+
+                &.open {
+                    display: block;
+                    position: fixed;
+                    z-index: 9;
+                    background: #fff;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    color: #242424;
+                    overflow-y: scroll;
+                    padding: 5rem 1.5625rem;
+                    -webkit-animation: .3s forwards slide-Y;
+                    animation: .3s forwards slide-Y;
+
+                    & ul {
+                        flex-direction: column;
+
+                        & li {
+                            padding: rem(18) 0;
+
+                            & a {
+                                font-size: 22px;
+                                font-weight: 300;
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         & ul {
             display: flex;
@@ -85,6 +128,20 @@ header {
                     }
                 }
             }
+        }
+    }
+
+    &__burger {
+        z-index: 10;
+
+        @media screen and (min-width: $w1024) {
+            display: none;
+        }
+    }
+
+    &__signup {
+        @media screen and (max-width: $w1024) {
+            display: none;
         }
     }
 }

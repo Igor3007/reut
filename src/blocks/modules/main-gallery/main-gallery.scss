@@ -16,28 +16,31 @@
 
 .gallery-view {
 
+
+
     &__slider {
         padding-top: rem(40);
         position: relative;
 
-        &:hover {
 
-            & .swiper-nav__prev,
-            & .swiper-nav__next {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
 
     }
 
     &__swiper {
 
+        @media screen and (max-width: $w480) {
+            margin-left: -15px;
+            margin-right: -15px;
+        }
 
         & .swiper-slide {
             & .bgimage {
                 padding-top: 57%;
                 @include bgimage-cover;
+
+                @media screen and (max-width: $w480) {
+                    padding-top: 65%;
+                }
 
             }
         }
@@ -100,10 +103,32 @@
 }
 
 .main-gallery {
+
+    &__view {
+        & .container {
+            &:hover {
+
+                & .swiper-nav__prev,
+                & .swiper-nav__next {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
     &__thumb {
         background-color: #EEE9E9;
         padding: rem(40);
         margin-top: rem(25);
+
+        @media screen and (max-width: $w760) {
+            padding: 0;
+
+            & .container {
+                padding: 0;
+            }
+        }
 
         &:hover {
 
@@ -119,6 +144,10 @@
             margin: 0 auto;
             box-sizing: content-box;
             position: relative;
+
+            @media screen and (max-width: $w1280) {
+                box-sizing: border-box;
+            }
         }
 
         & .swiper-slide {

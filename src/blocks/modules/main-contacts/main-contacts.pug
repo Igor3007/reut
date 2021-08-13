@@ -1,2 +1,25 @@
 mixin main-contacts()
-  div main-contacts
+  section.section-main-contacts(id="contacts")
+    .container
+      .section-main-contacts__title Контакты 
+      .section-main-contacts__main
+        .main-contacts
+          .main-contacts__address
+            .main-contacts__address-icon
+              svg(width='37' height='52' viewbox='0 0 37 52' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path(d='M18.6663 49.5683C18.6664 49.5681 18.6674 49.5673 18.6691 49.5659C18.6671 49.5677 18.6662 49.5684 18.6663 49.5683ZM19.107 49.0923C18.3053 48.2033 14.4398 43.8746 10.6485 38.3449C8.60552 35.3651 6.59829 32.0569 5.10492 28.767C3.60569 25.4642 2.65845 22.2532 2.65845 19.448C2.65845 10.3066 10.1331 2.85901 19.3292 2.85901C28.5253 2.85901 36 10.3066 36 19.448C36 22.2481 35.0284 25.4559 33.4884 28.7586C31.9546 32.0478 29.893 35.3556 27.7948 38.3354C23.8961 43.8723 19.9247 48.2023 19.107 49.0923Z' fill='white' stroke='#FF5454' stroke-width='2')
+                path(d='M19.5882 30.3333C22.4743 30.3333 25.2423 29.192 27.2831 27.1603C29.324 25.1287 30.4705 22.3732 30.4705 19.5C30.4705 16.6268 29.324 13.8713 27.2831 11.8397C25.2423 9.80802 22.4743 8.66666 19.5882 8.66666C16.702 8.66666 13.934 9.80802 11.8932 11.8397C9.85234 13.8713 8.70581 16.6268 8.70581 19.5C8.70581 22.3732 9.85234 25.1287 11.8932 27.1603C13.934 29.192 16.702 30.3333 19.5882 30.3333Z' fill='#FF5454')
+                path(d='M19.5883 23.8333C21.9924 23.8333 23.9412 21.8932 23.9412 19.5C23.9412 17.1068 21.9924 15.1667 19.5883 15.1667C17.1842 15.1667 15.2354 17.1068 15.2354 19.5C15.2354 21.8932 17.1842 23.8333 19.5883 23.8333Z' fill='white')
+
+            .main-contacts__address-desc
+              .main-contacts__address-title Адрес:
+              .main-contacts__address-text г.Липецк, Проспект победы, 104
+
+          .main-contacts__phone
+            .main-contacts__phone-desc
+              .main-contacts__phone-title Телефон:
+              .main-contacts__phone-text 8-919-167-04-46
+            .main-contacts__phone-msgr
+              ul
+                each item in app.msgr
+                  li: a( href=item.link): +icons(item.icon)

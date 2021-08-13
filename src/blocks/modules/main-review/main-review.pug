@@ -8,10 +8,10 @@ mixin review-item(data)
           span= data.date
           span через 
           a(href=data.link): +icons('#ic_ig-gray')
-    .review-item__main= data.text
+    .review-item__main!= data.text
 
 mixin main-review()
-  section.section-main-review
+  section.section-main-review(id="review")
     .container
       .section-main-review__title Отзывы наших клиентов 
       .section-main-review__subtitle Отзывы людей которые посетили наши мероприятия 

@@ -1,12 +1,12 @@
 mixin main-services()
-  section.section-main-services
+  section.section-main-services(id="services")
     .container
       .section-main-services__title Услуги 
       .section-main-services__main
         .main-services
           .main-services__list
             each item, index in app.services
-              .main-services__item
+              .main-services__item(id="kurs_"+index)
                 .services-item
                   .services-item__image: div: +bgimage(item.image)
                   .services-item__main

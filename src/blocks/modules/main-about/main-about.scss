@@ -7,15 +7,21 @@
     @include row-flex;
     align-items: center;
 
+    @media screen and (max-width: $w760) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
     &__left {
         @include col();
-        @include size-w1024(8);
+        @include size-w760(8);
         @include size(12);
     }
 
     &__right {
         @include col();
-        @include size-w1024(4);
+        @include size-w760(4);
         @include size(12);
     }
 
@@ -30,6 +36,12 @@
         max-width: rem(760);
         margin-right: auto;
         padding-bottom: rem(20);
+
+        @media screen and (max-width: $w1280) {
+            font-size: rem(16);
+        }
+
+        @media screen and (max-width: $w940) {}
     }
 
     &__msgr {
@@ -73,6 +85,11 @@
     &__photo {
         width: 100%;
         max-width: rem(404);
+
+        @media screen and (max-width: $w760) {
+            margin: auto;
+            padding-top: 25px;
+        }
 
         & .bgimage {
             @include box-square;
