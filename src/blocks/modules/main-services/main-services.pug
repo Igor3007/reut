@@ -17,7 +17,7 @@ mixin main-services()
                       .services-item__text!= item.for_whom
 
                     if item.text
-                      .services-item__subtitle Что вы узнаете на курсе: 
+                      .services-item__subtitle= item.titlText 
                       .services-item__text!= item.text
 
                     if item.time

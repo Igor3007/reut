@@ -13,13 +13,13 @@ mixin main-gallery()
                   .swiper-container(data-swiper="gallery")
                     .swiper-wrapper
                       each item in app.gallery
-                        .swiper-slide: +bgimage('../img/gallery/'+item.full)
+                        .swiper-slide: +bgimage('./img/gallery/'+item.full)
                 .swiper-nav
                   .swiper-nav__prev(data-swiper-prev="gallery"): +icons('#ic_arrow-left', 37)
                   .swiper-nav__next(data-swiper-next="gallery"): +icons('#ic_arrow-right', 37)
               .gallery-view__caption
                 .gallery-view__caption-autor
-                  .gallery-view__caption-photo: +bgimage('../img/common/autor.jpg')
+                  .gallery-view__caption-photo: +bgimage('./img/common/autor.jpg')
                   .gallery-view__caption-name Наталья Реутова 
                 .gallery-view__caption-desc 
                   each item, index in app.gallery
@@ -29,7 +29,7 @@ mixin main-gallery()
             .swiper-container(data-swiper="gallery-thumb")
               .swiper-wrapper
                 each item in app.gallery
-                  .swiper-slide: +bgimage('../img/gallery/'+item.thumb)
+                  .swiper-slide: +bgimage('./img/gallery/'+item.thumb)
             .swiper-nav
               .swiper-nav__prev(data-swiper-prev="gallery"): +icons('#ic_arrow-left', 37)
               .swiper-nav__next(data-swiper-next="gallery"): +icons('#ic_arrow-right', 37)

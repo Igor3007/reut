@@ -49,7 +49,7 @@
     &::after {
         content: '';
         width: 100%;
-        background-image: url('../img/common/sep.svg');
+        background-image: url('./img/common/sep.svg');
         width: rem(840);
         height: 25px;
         @include bgimage-contain;
@@ -192,9 +192,11 @@
 
     &__btn {
         & .btn {
-            width: 80%;
-            margin: auto;
-            height: 50px;
+            @media screen and (max-width: $w580) {
+                width: 80%;
+                margin: auto;
+                height: 50px;
+            }
         }
     }
 

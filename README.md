@@ -1,1 +1,1 @@
-# anex.by
+# promicom.by
